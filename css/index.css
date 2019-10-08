@@ -68,6 +68,12 @@ h1, h2, h3, h4, h5 {
 /* Copy and paste your work from yesterday here and start to refactor into flexbox */
 
 /* Good Idea page */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
 body {
 	width: 900px;
 	margin: 0 auto;
@@ -81,9 +87,10 @@ nav{
 	align-items: center;
 }
 
-.nav-tags{
+nav div{
 	display: flex;
     justify-content: space-evenly;
+    margin-right: 30px;
 }
 
 nav a{
@@ -97,7 +104,7 @@ nav a{
 .logo{
 	display: flex;
 	justify-content: center;
-	padding-left: 20px; 
+	/* padding-left: 20px;  */
 }
 
 /* Header styling */
@@ -132,11 +139,10 @@ header img{
 }
 
 hr{
-	border: 0.5px solid black;
+	border: 1px solid black;
 	text-align: center;
 	margin-top: 40px;
 	margin-bottom: 40px;
-	margin-right:  30px;
 }
 
 /* Section 1 styling */
@@ -184,37 +190,83 @@ footer{
 /* media queries */
 @media(max-width:800px){
     nav{
+        display: flex;
         flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
     }
+    /* nav a{
+        width: 85%;
+    } */
     .logo{
         padding-bottom: 10px;
+        /* width: 85%; */
     }
     header img{
         display: none;
     }
     .left-header{
         padding-right: 0;
+        width: 80%;
     }
-}
+    hr{
+        width: 100%;
+        /* margin-left: 8px; */
+    }
+    .section1{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    .section1 div{
+        width: 48%;
+    }
+    /* .middle-img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    } */
+    .section2{
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        padding-left: 8px;
+       width: 98%;
+    }
+    .section2 div{
+        width: 33%;
+    }
+    .contact{
+        width: 95%;
+        padding-left: 8px;
+    }
+} 
 
 @media(max-width:500px){
-    .nav-tags{
+    nav div{
        flex-direction: column;
+       margin-right:0;
+       margin-left: 0;
+       padding: 0;
+    }
+    nav{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* padding: 0; */
     }
     nav a{
         border-top: 1px solid lightgray;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        padding-right: 70px;
-        padding-left: 70px;
         font-size: 10px;
+        padding: 5px 70px;
+        width:100%;
     }
     nav a:last-child{
         border-bottom: 1px solid lightgray;
     }
     .logo{
         width: 10%;
-        padding-right: 10px;
     }
     .left-header{
         padding-right: 0;
@@ -229,28 +281,19 @@ footer{
         padding-left: 20px;
     }
     .section1 div{
-        margin-bottom: 20px;
-    }
-    hr{
-        margin-left: 20px;
-        margin-right: 30px;
-    }
-    .middle-img{
-        margin-left: 20px;
-        margin-right: 30px;
-        margin-top: 20px;
+        width: 100%;
     }
     .section2{
         flex-direction: column;
         align-items: flex-start;
         padding-left: 20px;
+        width: 98%;
     }
     .section2 div{
         padding-bottom: 20px;
+        width: 100%;
     }
     .contact{
         padding-left: 20px;
     }
 }
-
-
